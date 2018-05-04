@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1B9A7068209BAB7D0006993E /* libios.tracking_SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFB914D209628150029821B /* libios.tracking_SDK.a */; };
 		1BCBB37C209CCB7700047C8C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCBB37B209CCB7700047C8C /* AdSupport.framework */; };
+		1BCBB48F209CE50A00047C8C /* ios_tracking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BFB914C209628150029821B /* ios_tracking.h */; };
+		1BCBB490209CE50A00047C8C /* RNShareasale.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3E7B5881CC2AC0600A0062D /* RNShareasale.h */; };
 		B3E7B58A1CC2AC0600A0062D /* RNShareasale.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNShareasale.m */; };
 /* End PBXBuildFile section */
 
@@ -19,14 +21,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				1BCBB48F209CE50A00047C8C /* ios_tracking.h in CopyFiles */,
+				1BCBB490209CE50A00047C8C /* RNShareasale.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1BCBB379209CCB3500047C8C /* libRNShareasale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRNShareasale.a; path = "/Users/johnwu/Projects/shareasale/ios/build/Debug-iphoneos/libRNShareasale.a"; sourceTree = "<absolute>"; };
 		1BCBB37B209CCB7700047C8C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		1BCBB40B209CE31800047C8C /* libRNShareasale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNShareasale.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB914C209628150029821B /* ios_tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ios_tracking.h; sourceTree = "<group>"; };
 		1BFB914D209628150029821B /* libios.tracking_SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libios.tracking_SDK.a; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNShareasale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNShareasale.h; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				B3E7B5881CC2AC0600A0062D /* RNShareasale.h */,
 				B3E7B5891CC2AC0600A0062D /* RNShareasale.m */,
 				1BCBB37A209CCB7700047C8C /* Frameworks */,
+				1BCBB40B209CE31800047C8C /* libRNShareasale.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +103,7 @@
 			);
 			name = RNShareasale;
 			productName = RCTDataManager;
-			productReference = 1BCBB379209CCB3500047C8C /* libRNShareasale.a */;
+			productReference = 1BCBB40B209CE31800047C8C /* libRNShareasale.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -228,6 +233,10 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -250,6 +259,10 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
