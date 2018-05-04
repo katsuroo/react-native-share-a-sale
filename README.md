@@ -45,9 +45,9 @@ React native bridge library for the share a sale SDK.
       NSString *shareASaleAppId = INSERT SHARE A SALE APP ID;
       NSString *shareASaleAppKey = INSERT SHARE A SALE APP KEY;
 
-      [[RNShareasale alloc] init:AppKey
-                           appId:AppId
-                      merchantId:MerchantId
+      [[RNShareasale alloc] init:shareASaleAppKey
+                           appId:shareASaleAppId
+                      merchantId:shareASaleMerchantId
                         rootView:rootView];
 }
 ```
