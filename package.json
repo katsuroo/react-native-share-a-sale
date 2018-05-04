@@ -1,6 +1,6 @@
 {
   "name": "react-native-shareasale",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,12 @@
     "share a sale",
     "shareasale"
   ],
-  "author": "",
-  "license": "",
+  "author": "John",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/katsuroo/react-native-share-a-sale"
+  },
   "peerDependencies": {
     "react-native": "0.41.2"
   },
