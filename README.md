@@ -3,15 +3,20 @@
 
 React native bridge library for the share a sale SDK.
 
+##### status: alpha
+
+##### done:
+- iOS implementation for track purchases
+
+##### todos:
+- implement the rest of iOS methods
+- android implementation
+
 ## Getting started
 
 `$ npm install react-native-shareasale --save`
 
-### Mostly automatic installation
-
-`$ react-native link react-native-shareasale`
-
-### Manual installation
+### Installation
 
 
 #### iOS
@@ -20,6 +25,32 @@ React native bridge library for the share a sale SDK.
 2. Go to `node_modules` ➜ `react-native-shareasale` and add `RNShareasale.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNShareasale.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
+5. Add the following lines into your AppDelegate.m
+```
+// import the library at the top of the file
+
+#import <RNShareasale/RNShareasale.h>
+
+
+// Insert inside the didFinishLaunchingWithOptions method
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+      // The rootView should already be defined in your app delegate file. It is needed to initialize the share a sale library.
+      RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+                                                          moduleName:@"moduleName"
+                                                   initialProperties:nil
+                                                       launchOptions:launchOptions];
+
+      NSString *shareASaleMerchantId = INSERT SHARE A SALE MERCHANT ID;
+      NSString *shareASaleAppId = INSERT SHARE A SALE APP ID;
+      NSString *shareASaleAppKey = INSERT SHARE A SALE APP KEY;
+
+      [[RNShareasale alloc] init:AppKey
+                           appId:AppId
+                      merchantId:MerchantId
+                        rootView:rootView];
+}
+```
 
 #### Android
 
@@ -39,6 +70,16 @@ React native bridge library for the share a sale SDK.
 ## Usage
 ```javascript
 import RNShareasale from 'react-native-shareasale';
+
+const orderNumber = 1234;
+const transactionType = 'Sales';
+const total = 12
+
+RNShareasale.trackPurchase(
+  orderNumber,
+  transactionType,
+  total
+);
 
 // TODO: What to do with the module?
 RNShareasale;
