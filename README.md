@@ -54,9 +54,27 @@ React native bridge library for the share a sale SDK.
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
   - Add `import com.reactlibrary.RNShareasalePackage;` to the imports at the top of the file
-  - Add `new RNShareasalePackage()` to the list returned by the `getPackages()` method
+  - Add the following code
+  ```
+  public class MainApllication extends Application implements ReactApplication {
+    com.shareasale.android.tracking.trackingUtilitiy shareASaleTracking;
+    ...
+    @Override
+    public void onCreate() {
+      super.onCreate();
+      shareasaleTracking = new com.shareasale.android.tracking.trackingUtility(
+        MERCHANT_ID,
+        APP_ID,
+        APP_KEY,
+        HAS_PHONE_PERMISSION,
+        HAS_WIFI_PERMISSION
+        );
+    }
+  }
+  ```
+  - Add `new RNShareasalePackage(shareASaleTracking)` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-shareasale'
@@ -66,7 +84,17 @@ React native bridge library for the share a sale SDK.
   	```
       compile project(':react-native-shareasale')
   	```
-
+4. Add Path to ShareASale SDK in `android/build.gradle`
+    ```
+       allprojects {
+         repositories {
+           ...
+           flatDir {
+             dir "$rootDir/../node_modules/react-native-shareasale/android/lib"
+           }
+         }
+       }
+    ```
 ## Usage
 ```javascript
 import RNShareasale from 'react-native-shareasale';

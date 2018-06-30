@@ -32,5 +32,12 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'com.shareasale.android.tracking'
+    compile(name: 'tracking', ext: 'aar')
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs "lib"
+        }
 }
