@@ -6,11 +6,10 @@ React native bridge library for the share a sale SDK.
 ##### status: alpha
 
 ##### done:
-- iOS implementation for track purchases
+- iOS & Android implementation for track purchases
 
 ##### todos:
-- implement the rest of iOS methods
-- android implementation
+- implement the rest of the methods
 
 ## Getting started
 
